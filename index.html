@@ -3,26 +3,14 @@
 	<head>
 	    <meta charset="UTF-8">
 	    <title>.MIC Articles</title>
+	    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="public/stylesheet" type="text/css" href="normalize.css">
+  <link rel="stylesheet" type="text/css" href="public/style.css">
 	</head>
 	<body>
 	    <div id="app">React will render here!</div>
 	    <script src="node_modules/react/dist/react.js"></script>
 	    <script src="node_modules/react-dom/dist/react-dom.js"></script>
-	    <script>
-		    	var div = React.DOM.div
-	        var h1 = React.DOM.h1
-
-	        var MyFirstComponent = React.createClass({
-	          render: function () {
-	            return (
-	              div(null,
-	                h1(null, 'This is my first component!')
-	              )
-	            )
-	          }
-	         })
-
-	        ReactDOM.render(React.createElement(MyFirstComponent), document.getElementById('app'))
-	    </script>
+	    <script src="app/Components/ClientApp.js"></script>
 	</body>
 </html>
