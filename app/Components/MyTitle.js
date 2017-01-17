@@ -7,7 +7,7 @@ var MyTitle = React.createClass({
   render: function () {
     return (
       div(null,
-        h1({style: { color: this.props.color }}, this.props.title)
+        h1({ style: { color: this.props.color } }, this.props.title)
       )
     )
   }

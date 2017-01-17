@@ -1,3 +1,11 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
+// import { render } from ('react-dom')
+
+import MyTitle from './MyTitle'
+
+var div = React.DOM.div
+
 var MyTitleFact = React.createFactory(MyTitle)
 
 var MyFirstComponent = React.createClass({
