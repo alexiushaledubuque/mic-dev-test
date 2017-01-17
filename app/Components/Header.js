@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+// import ReactDOM from 'react-dom'
 
 import MyTitle from './MyTitle'
 
@@ -11,9 +11,9 @@ var Header = React.createClass({
   render: function () {
     return (
       div(null,
-        MyTitleFact({ title: 'ARTHUR', color: 'peru' }),
-        MyTitleFact({ title: 'WORDS', color: 'papapyawhip' }),
-        MyTitleFact({ title: 'SUBMITTED', color: 'wheat' })
+        MyHeaderFact({ title: 'ARTHUR', color: 'peru' }),
+        MyHeaderFact({ title: 'WORDS', color: 'papapyawhip' }),
+        MyHeaderFact({ title: 'SUBMITTED', color: 'wheat' })
       )
     )
   }

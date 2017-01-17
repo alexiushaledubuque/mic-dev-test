@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Header from './Header'
+// import Header from './Header'
 import MyTitle from './MyTitle'
 
 var div = React.DOM.div
