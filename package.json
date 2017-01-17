@@ -4,7 +4,8 @@
   "description": ".Mic UI/UX Dev Test",
   "main": "index.js",
   "scripts": {
-    "lint": "standard"
+    "lint": "standard",
+    "build": "webpack"
   },
   "author": "Alexius Hale-Dubuque",
   "license": "ISC",
