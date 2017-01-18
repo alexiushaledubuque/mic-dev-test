@@ -1,19 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
+import { hashHistory, Router } from 'react-router'
 
-import '../public/normalize.css'
-import '../public/style.css'
+import AppRoutes from './config/routes'
 
-import Main from './Main'
-
-const App = React.createClass({
-  render () {
-    return (
-      <div>
-        <Main />
-      </div>
-    )
-  }
-})
-
-render(<App />, document.getElementById('app'))
+render(<Router history={hashHistory}>{AppRoutes}</Router>, document.getElementById('app'))
