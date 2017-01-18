@@ -1,5 +1,5 @@
-[
-    {
+{ 
+    "news": [{
         "id": 72717,
         "title": "China's Third Plenum: Everything You Need to Know",
         "publish_at": "2013-11-09 11:11:00",
@@ -1106,3 +1106,4 @@
         ]
     }
 ]
+}

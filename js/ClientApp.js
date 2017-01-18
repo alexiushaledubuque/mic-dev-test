@@ -1,7 +1,15 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { hashHistory, Router } from 'react-router'
 
-import AppRoutes from './config/routes'
+import Main from './Main'
 
-render(<Router history={hashHistory}>{AppRoutes}</Router>, document.getElementById('app'))
+const App = React.createClass({
+  render () {
+    return (
+      <div className='app'>
+        <Main />
+      </div>
+    )
+  }
+})
+render(<App />, document.getElementById('app'))

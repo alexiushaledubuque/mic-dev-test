@@ -9,7 +9,7 @@ import Articles from './Articles'
 const Main = React.createClass({
   render () {
     return (
-      <div>
+      <div className='main-container'>
         <Header />
         <Articles />
       </div>
