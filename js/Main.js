@@ -10,8 +10,12 @@ const Main = React.createClass({
   render () {
     return (
       <div className='main-container'>
-        <Header />
-        <Articles />
+        <div className='displayDetail'>
+          <Header />
+            <div>
+              <Articles />
+            </div>
+        </div>
       </div>
     )
   }
