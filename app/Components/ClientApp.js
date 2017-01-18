@@ -2,9 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import Header from './Header'
-// import MyTitle from './MyTitle'
 
-var MyFirstComponent = React.createClass({
+var MainComponent = React.createClass({
   render: function () {
     return (
       <div>
@@ -14,4 +13,4 @@ var MyFirstComponent = React.createClass({
   }
 })
 
-ReactDOM.render(React.createElement(MyFirstComponent), document.getElementById('app'))
+ReactDOM.render(React.createElement(MainComponent), document.getElementById('app'))

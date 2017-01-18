@@ -9,16 +9,16 @@ const Header = React.createClass({
     return (
       <div className='col-sm-12 headerBar divider'>
         <div className='col-sm-9 articles'>
-          UNPUBLISHED ARTICLES
+          <div className='clearance'>UNPUBLISHED ARTICLES</div>
         </div>
         <div className='col-sm-1 author'>
-          AUTHOR
+          <div className='clearance'>AUTHOR</div>
         </div>
         <div className='col-sm-1 words'>
-          WORDS
+          <div className='clearance'>WORDS</div>
         </div>
         <div className='col-sm-1 submitted'>
-          SUBMITTED
+          <div className='clearance'>SUBMITTED</div>
         </div>
         
       </div>

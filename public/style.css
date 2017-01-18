@@ -1,9 +1,8 @@
 .headerBar {
-	background-color: #AD3C3C;
+	background-color: #881E1E;
 	height: 70px;
 	width: 100%;
 	color: #FBF8F8;
-	padding-top: 20px;
 	padding-bottom: 5px;
 	border-style: solid;
 	border-bottom-color: red;
@@ -22,4 +21,8 @@
 
 .divider {
    border-right: 1px solid #2C2A2A;
+}
+
+.clearance {
+	padding-top: 20px;
 }
