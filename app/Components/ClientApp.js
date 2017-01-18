@@ -1,10 +1,13 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
+
+import '../../public/normalize.css'
+import '../../public/style.css'
 
 import Header from './Header'
 
-var MainComponent = React.createClass({
-  render: function () {
+const App = React.createClass({
+  render () {
     return (
       <div>
         <Header />
@@ -13,4 +16,4 @@ var MainComponent = React.createClass({
   }
 })
 
-ReactDOM.render(React.createElement(MainComponent), document.getElementById('app'))
+render(<App />, document.getElementById('app'))
