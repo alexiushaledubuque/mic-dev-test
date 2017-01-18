@@ -4,13 +4,13 @@ import { render } from 'react-dom'
 import '../public/normalize.css'
 import '../public/style.css'
 
-import Header from './Header'
+import Main from './Main'
 
 const App = React.createClass({
   render () {
     return (
       <div>
-        <Header />
+        <Main />
       </div>
     )
   }
