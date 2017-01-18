@@ -1,3 +1,25 @@
 .headerBar {
-	background-color: red;
+	background-color: #AD3C3C;
+	height: 70px;
+	width: 100%;
+	color: #FBF8F8;
+	padding-top: 20px;
+	padding-bottom: 5px;
+	border-style: solid;
+	border-bottom-color: red;
+}
+
+.articles {}
+
+.author, .words, .submitted {
+	height: 100%;
+	border-left: 1px solid #2C2A2A;
+}
+
+.words {}
+
+.submitted {}
+
+.divider {
+   border-right: 1px solid #2C2A2A;
 }

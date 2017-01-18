@@ -7,21 +7,20 @@ const Header = React.createClass({
   render: function () {
     const style = { color: this.props.color }
     return (
-       <div className='col-sm-12'>
-        <form>
-          <div className='form-group col-sm-6'>
-            UNPUBLISHED ARTICLES
-          </div>
-          <div className='form-group col-sm-2'>
-            AUTHOR
-          </div>
-          <div className='form-group col-sm-2'>
-            WORDS
-          </div>
-          <div className='form-group col-sm-2'>
-            SUBMITTED
-          </div>
-        </form>
+      <div className='col-sm-12 headerBar divider'>
+        <div className='col-sm-9 articles'>
+          UNPUBLISHED ARTICLES
+        </div>
+        <div className='col-sm-1 author'>
+          AUTHOR
+        </div>
+        <div className='col-sm-1 words'>
+          WORDS
+        </div>
+        <div className='col-sm-1 submitted'>
+          SUBMITTED
+        </div>
+        
       </div>
     )
   }
