@@ -22,7 +22,19 @@ module.exports = {
         include: path.resolve(__dirname, 'app'),
         test: /\.js$/,
         loader: 'babel-loader'
-      }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              url: false
+            }
+          }
+        ]
+      },
     ]
   }
 }
