@@ -2,8 +2,8 @@ const path = require('path')
 
 module.exports = {
   context: __dirname,
-  entry: './app/Components/ClientApp.js',
-  devtool: 'source-map',
+  entry: './js/ClientApp.js',
+  devtool: 'eval',
   output: {
     path: path.join(__dirname, '/public'),
     filename: 'bundle.js'
@@ -19,7 +19,7 @@ module.exports = {
   module: {
     rules: [
       {
-        include: path.resolve(__dirname, 'app'),
+        include: path.resolve(__dirname, 'js'),
         test: /\.js$/,
         loader: 'babel-loader'
       },
@@ -34,7 +34,7 @@ module.exports = {
             }
           }
         ]
-      },
+      }
     ]
   }
 }
