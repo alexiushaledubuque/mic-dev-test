@@ -1,20 +1,28 @@
 import React from 'react'
-// import ReactDOM from 'react-dom'
 
-import MyTitle from './MyTitle'
+const div = React.DOM.div
+const h1 = React.DOM.h1
 
-var div = React.DOM.div
-
-var MyHeaderFact = React.createFactory(MyTitle)
-
-var Header = React.createClass({
+const Header = React.createClass({
   render: function () {
+    const style = { color: this.props.color }
     return (
-      div(null,
-        MyHeaderFact({ title: 'ARTHUR', color: 'peru' }),
-        MyHeaderFact({ title: 'WORDS', color: 'papapyawhip' }),
-        MyHeaderFact({ title: 'SUBMITTED', color: 'wheat' })
-      )
+       <div className='col-sm-12'>
+        <form>
+          <div className='form-group col-sm-6'>
+            UNPUBLISHED ARTICLES
+          </div>
+          <div className='form-group col-sm-2'>
+            AUTHOR
+          </div>
+          <div className='form-group col-sm-2'>
+            WORDS
+          </div>
+          <div className='form-group col-sm-2'>
+            SUBMITTED
+          </div>
+        </form>
+      </div>
     )
   }
 })

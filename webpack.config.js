@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = {
   context: __dirname,
   entry: './app/Components/ClientApp.js',
-  devtool: 'eval',
+  devtool: 'source-map',
   output: {
     path: path.join(__dirname, '/public'),
     filename: 'bundle.js'
@@ -19,7 +19,7 @@ module.exports = {
   module: {
     rules: [
       {
-        exclude: /node_modules/,
+        include: path.resolve(__dirname, 'app'),
         test: /\.js$/,
         loader: 'babel-loader'
       }
