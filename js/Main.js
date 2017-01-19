@@ -12,9 +12,9 @@ const Main = React.createClass({
       <div className='main-container'>
         <div className='displayDetail'>
           <Header />
-            <div>
-              <Articles />
-            </div>
+          <div>
+            <Articles />
+          </div>
         </div>
       </div>
     )

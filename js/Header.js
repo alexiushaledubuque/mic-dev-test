@@ -1,17 +1,16 @@
 import React from 'react'
 
 import preloadData from '../public/articles.json'
-import moreData from '../public/more-articles.json'
+// import moreData from '../public/more-articles.json'
 
 const div = React.DOM.div
 
-const rowCount = preloadData.length + moreData.length
-console.log('Row count: ', rowCount)
+const rowCount = Object.keys(preloadData.news).length
 
 const Header = React.createClass({
   render: function () {
     return (
-      <div className='col-sm-12 headerBar divider'>
+      <div className='col-sm-12 headerBar'>
         <div className='col-sm-9 articles'>
           <div className='clearance'>UNPUBLISHED ARTICLES ({rowCount})</div>
         </div>

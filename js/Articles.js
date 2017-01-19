@@ -10,7 +10,7 @@ const Articles = React.createClass({
       <div className='articles'>
         {preload.news.map((story) => {
           return (
-            <ArticleList key={story.id} story={story} />
+            <ArticleList key={story.id} {...story} />
           )
         })}
       </div>
