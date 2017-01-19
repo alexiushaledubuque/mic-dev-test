@@ -5,6 +5,7 @@ import '../public/style.css'
 
 import Header from './Header'
 import Articles from './Articles'
+// import Testing from './Testing'
 
 const Main = React.createClass({
   render () {

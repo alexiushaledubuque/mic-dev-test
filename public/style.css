@@ -1,6 +1,7 @@
 .main-container {
   width: 98%;
   height: 100px;
+  font-size: 12px;
 }
 
 .headerBar {
@@ -39,9 +40,9 @@
 	float: right;
 }
 
-.words {}
+.words, .submitted {
 
-.submitted {}
+}
 
 .divider {
    border-right: 1px inset #EEEDED;
@@ -50,4 +51,8 @@
 
 .clearance {
 	padding-top: 20px;
+}
+
+.loader {
+	width: 100px;
 }
