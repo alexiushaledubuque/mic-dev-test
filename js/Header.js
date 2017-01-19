@@ -11,7 +11,7 @@ const Header = React.createClass({
   render: function () {
     return (
       <div className='col-sm-12 headerBar'>
-        <div className='col-sm-9 articles'>
+        <div className='col-sm-9'>
           <div className='clearance'>UNPUBLISHED ARTICLES ({rowCount})</div>
         </div>
         <div className='col-sm-1 author'>
@@ -23,7 +23,6 @@ const Header = React.createClass({
         <div className='col-sm-1 submitted'>
           <div className='clearance'>SUBMITTED</div>
         </div>
-
       </div>
     )
   }

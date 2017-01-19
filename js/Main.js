@@ -9,12 +9,22 @@ import Articles from './Articles'
 const Main = React.createClass({
   render () {
     return (
-      <div className='main-container'>
-        <div className='displayDetail'>
-          <Header />
+      <div className='main-container col-sm-12'>
+        <nav className='navbar nav' role='navigation'>
           <div>
-            <Articles />
+            <Header />
           </div>
+        </nav>
+        <div>
+          <table className='table table-striped'>
+            <tbody>
+              <tr>
+                <td>
+                  <Articles />
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     )

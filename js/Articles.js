@@ -13,6 +13,7 @@ const Articles = React.createClass({
             <ArticleList key={story.id} {...story} />
           )
         })}
+        <button type='' className='btn btn-block btn-primary'>Load More</button>
       </div>
     )
   }
