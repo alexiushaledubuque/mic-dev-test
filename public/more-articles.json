@@ -1,5 +1,5 @@
-[
-    {
+{
+    "news": [{
         "id": 72577,
         "title": "Typhoon Haiyan Tracker: The Biggest Storm in Decades Moves From Philippines to China",
         "publish_at": "2013-11-08 09:46:00",
@@ -1010,3 +1010,4 @@
         ]
     }
 ]
+}

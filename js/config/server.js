@@ -1,72 +1,43 @@
-// config/server.js
+// Server File - Express.js
 
 require('babel-register')
 
-const path = require('path')
-const { Server } = require('http')
-const Express = require('express')
+const express = require('express')
 const React = require('react')
-const { renderToString } = require ('react-dom/server')
-const { match, RouterContext } = require('react-router') 
-const routes = require('./routes')
+const ReactDOMServer = require('react-dom/server')
+const ReactRouter = require('react-router')
+const match = ReactRouter.match
+const RouterContext = ReactRouter.RouterContext
+const _ = require('lodash')
+const fs = require('fs')
+const port = 5050
+const baseTemplate = fs.readFileSync('./index.html')
+const template = _.template(baseTemplate) // function that returns a function
+const ClientApp = require('./js/ClientApp.js')
+const Routes = require('./routes.js')
 
-// initialize the server and configure support for ejs templates
-const app = new Express()
-const server = new Server(app)
+const app = express()
 
-app.set('view engine', 'ejs')
+app.use('/public', express.static('./public'))
 
-app.set('views', path.join(__dirname, 'views'))
-
-
-// define the folder that will be used for static assets
-app.use(Express.static(__dirname + '/../../public'))
-
-// universal routing and rendering
-app.get('*', (req, res) => {
-
-  match(
-
-    { routes, location: req.url }, 
-
-    (err, redirectLocation, renderProps) => {
-    
-    // in case of error display the error message
-    if (err) {
-      res.status(500).send(err.message)
-    } 
-
-    // in case of redirect propagate the redirect to the browser
-    if (redirectLocation) {
-      return res.redirect(302, redirectLocation.pathname + redirectLocation.search)  
-    } 
-
-    // generate the React markup for the current route
-    let body
-
-    if (renderProps) {
-      // if the current route matched we have renderProps
-      body = renderToString(<RouterContext {...renderProps} />)
+app.use((req, res) => {
+  match({ routes: Routes, location: req.url }, (error, redirectLocation, renderProps) => {
+    if (error) {
+      res.status(500).send(error.message)
+    } else if (redirectLocation) {
+      res.redirect(302, redirectLocation.pathname + redirectLocation.search)
+    } else if (renderProps) {
+      const body = ReactDOMServer.renderToString(
+        React.createElement(Provider, { store },
+          React.createElement(RouterContext, renderProps)
+        )
+      )
+      res.status(200).send(template({ body }))
     } else {
-      // otherwise we can render a 404 page
-      res.status(404)
+      res.status(404).send('Not Found!')
     }
-
-    // render the index template with the embedded React markup
-    return res.render('index', { body })
-    }
-  )
+  })
 })
 
-// start the server
-const port = process.env.PORT || 3000
-const env = process.env.NODE_ENV || 'production';
-
-server.listen(port, err => {
-  if (err) {
-    return console.error(err)
-  }
-  console.info(`Server listening on http://localhost:${port} [${env}]`)
-})
-
-
+console.log('listening on port: ', port)
+app.listen(port)
