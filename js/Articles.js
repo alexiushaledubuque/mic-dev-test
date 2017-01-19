@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import dataToLoad from '../public/articles.json'
 import ArticleList from './ArticleList'
 import axios from 'axios'
-// import getMoreArticles from './utils/helper.js'
 
 class Articles extends Component {
   constructor (props) {
@@ -13,12 +12,14 @@ class Articles extends Component {
       defaultCount: 10
     }
     this.data = dataToLoad
-    this.data.size = Object.keys(this.data.news).length
+    this.size = Object.keys(this.data.news).length
     this.handleCount = this.handleCount.bind(this)
   }
   getInitialState () {
     return {
-      newArticles: {}
+      newArticles: {},
+      stopFlag: false,
+      button: ''
     }
   }
   componentDidMount () {
@@ -34,19 +35,25 @@ class Articles extends Component {
   handleCount () {
     let count = this.state.defaultCount
     count = count + this.state.count
-    if (count <= this.data.size) {
-      console.log('Current count is: ', count)
+
+    if (count <= this.size) {
       this.setState({ count })
     } else {
-      console.log('End of file. Add new articles to display')
-      for (let i = 0; i < this.state.newArticles.length; i++) {
-        console.log('new row: ', this.state.newArticles[i])
-        this.data.push(this.state.newArticles[i])
+      if (!this.state.stopFlag) {
+        let tempSize = Object.keys(this.data.news).length
+        for (let i = 0; i < this.state.newArticles.length; i++) {
+          this.data.news[tempSize + i] = this.state.newArticles[i]
+        }
+        this.size = Object.keys(this.data.news).length
+        this.state.stopFlag = true
+      } else {
+
       }
     }
   }
   render () {
     const count = this.state.count
+    this.state.button = <button type='button' onClick={this.handleCount} className='btn btn-block btn-primary'>Load Rows</button>
     const showData = (item, index) => {
       return ((index < count) ? <ArticleList key={item.id} {...item} /> : '')
     }
@@ -54,7 +61,7 @@ class Articles extends Component {
       <div>
         {this.data.news.map(showData)}
         <div className='loader'>
-          <button type='button' onClick={this.handleCount} className='btn btn-block btn-primary'>Load Rows</button>
+          {this.state.button}
         </div>
       </div>
     )

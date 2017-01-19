@@ -17,10 +17,10 @@ const Header = React.createClass({
         <div className='col-sm-1 author'>
           <div className='clearance'>AUTHOR</div>
         </div>
-        <div className='col-sm-1 words'>
+        <div className='col-sm-1 words sortable'>
           <div className='clearance'>WORDS</div>
         </div>
-        <div className='col-sm-1 submitted'>
+        <div className='col-sm-1 submitted sortable'>
           <div className='clearance'>SUBMITTED</div>
         </div>
       </div>

@@ -40,8 +40,9 @@
 	float: right;
 }
 
-.words, .submitted {
-
+.sortable:hover {
+    color: yellow;
+    background-color: silver;
 }
 
 .divider {
