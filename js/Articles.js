@@ -56,7 +56,7 @@ class Articles extends Component {
   }
   render () {
     const count = this.state.count
-    this.state.button = <button type='button' onClick={this.handleCount} className='btn btn-block btn-primary'>Load Rows</button>
+    this.state.button = <button type='button' onClick={this.handleCount} className='btn btn-block btn-primary'>Load More</button>
     const showData = (item, index) => {
       return ((index < count) ? <ArticleList key={item.id} {...item} /> : '')
     }
