@@ -19,7 +19,8 @@ class Articles extends Component {
     return {
       newArticles: {},
       stopFlag: false,
-      button: ''
+      button: '',
+      currentTableView: {}
     }
   }
   componentDidMount () {

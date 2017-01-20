@@ -1,7 +1,6 @@
 import React from 'react'
 
 import preloadData from '../public/articles.json'
-// import moreData from '../public/more-articles.json'
 
 const div = React.DOM.div
 

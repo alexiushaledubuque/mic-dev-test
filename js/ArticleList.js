@@ -19,8 +19,8 @@ const ArticleList = React.createClass({
           <img src={this.props.image} className='resize' />
           <p className='col-sm-7'><a href={this.props.url}>{this.props.title}</a></p>
           <p className='col-sm-1 author'>{this.props.profile.first_name} {this.props.profile.last_name}</p>
-          <p className='col-sm-1 words'>{this.props.words}</p>
-          <p className='col-sm-1 submitted'>{Moment(this.props.publish_at).fromNow()}</p>
+          <p className='col-sm-1 words sortable'>{this.props.words}</p>
+          <p className='col-sm-1 submitted sortable'>{Moment(this.props.publish_at).fromNow()}</p>
         </div>
       </div>
     )
