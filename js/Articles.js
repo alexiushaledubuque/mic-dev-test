@@ -48,7 +48,7 @@ class Articles extends Component {
         this.size = Object.keys(this.data.news).length
         this.state.stopFlag = true
       } else {
-
+        console.log('No More Articles To Display.')
       }
     }
   }
