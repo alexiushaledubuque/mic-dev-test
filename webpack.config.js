@@ -6,6 +6,7 @@ module.exports = {
   devtool: 'eval',
   output: {
     path: path.join(__dirname, '/public'),
+    publicPath: '/public',
     filename: 'bundle.js'
   },
   devServer: {
@@ -13,7 +14,7 @@ module.exports = {
     historyApiFallback: true
   },
   resolve: {
-    extensions: ['.js', '.json', '.css']
+    extensions: ['.js', '.jsx', '.json', '.css']
   },
   stats: {
     colors: true,
@@ -33,7 +34,10 @@ module.exports = {
         loader: 'json-loader'
       },
       {
-        include: path.resolve(__dirname, 'js'),
+        include: [
+          path.resolve(__dirname, 'js'),
+          path.resolve('node_modules/preact-compat/src')
+        ],
         test: /\.js$/,
         loader: 'babel-loader'
       },
