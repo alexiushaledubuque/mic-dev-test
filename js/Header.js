@@ -1,4 +1,4 @@
-// The top bar of the view
+// The top bar of the view - displays like a navigation bar
 
 import React from 'react'
 
