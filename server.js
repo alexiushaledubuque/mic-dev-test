@@ -1,3 +1,5 @@
+// config/server.js
+
 require('babel-register')
 
 const express = require('express')
@@ -7,18 +9,18 @@ const ReactRouter = require('react-router')
 const ServerRouter = ReactRouter.ServerRouter
 const _ = require('lodash')
 const fs = require('fs')
-const PORT = 3000
+const port = 5050
 const baseTemplate = fs.readFileSync('./index.html')
 const template = _.template(baseTemplate)
 const App = require('./js/App').default
 
 const server = express()
 
-server.use('/public', express.static('../public'))
+server.use('/public', express.static('./public'))
 
 server.use((req, res) => {
   const context = ReactRouter.createServerRenderContext()
-  const body = ReactDOMServer.renderToString(
+  let body = ReactDOMServer.renderToString(
     React.createElement(ServerRouter, {location: req.url, context: context},
       React.createElement(App)
     )
@@ -27,5 +29,5 @@ server.use((req, res) => {
   res.end()
 })
 
-console.log('listening on port: ' + PORT)
-server.listen(PORT)
+console.log('listening on ' + port)
+server.listen(port)

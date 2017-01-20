@@ -13,8 +13,6 @@ const ArticleList = React.createClass({
     publish_at: string
   },
   render () {
-    console.log('Current Props: ', this.props)
-    console.log('current count; ', Object.keys(this.props).length)
     return (
       <div className='col-sm-12'>
         <div className='articleListing'>

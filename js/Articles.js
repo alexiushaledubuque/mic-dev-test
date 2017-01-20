@@ -20,7 +20,7 @@ class Articles extends Component {
       newArticles: {},
       stopFlag: false,
       button: '',
-      currentTableView: {}
+      message: ''
     }
   }
   componentDidMount () {
@@ -48,7 +48,7 @@ class Articles extends Component {
         this.size = Object.keys(this.data.news).length
         this.state.stopFlag = true
       } else {
-        console.log('No More Articles To Display.')
+        this.state.message = <h3>No More Articles To Display.</h3>
       }
     }
   }
@@ -62,7 +62,7 @@ class Articles extends Component {
       <div>
         {this.data.news.map(showData)}
         <div className='loader'>
-          {this.state.button}
+          {this.state.button} {this.state.message}
         </div>
       </div>
     )
