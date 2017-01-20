@@ -38,5 +38,3 @@ To run the application in your development environment:
 Developer: 
 
 [Alexius Hale-Dubuque](https://www.linkedin.com/in/alexiushaledubuque) | [Github](https://github.com/alexiushaledubuque)
-
-(/assets/Mic-Img.png)
