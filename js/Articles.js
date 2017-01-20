@@ -1,3 +1,5 @@
+// This component handles each object from the data file by sending it to a child component for styling
+
 import React, { Component } from 'react'
 import dataToLoad from '../public/articles.json'
 import ArticleList from './ArticleList'

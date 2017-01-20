@@ -1,3 +1,5 @@
+// Routes configured intitally; however, routes aren't required for app
+
 import React from 'react'
 import Main from '../Main'
 import Header from '../Header'

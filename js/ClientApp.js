@@ -1,3 +1,5 @@
+// Main driver component for the app which renders the views
+
 import React from 'react'
 import { render } from 'react-dom'
 

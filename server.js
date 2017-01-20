@@ -1,33 +1,62 @@
-// config/server.js
+// Server Side rendering
 
 require('babel-register')
 
-const express = require('express')
+const path = require('path')
+const { Server } = require('http')
+const Express = require('express')
 const React = require('react')
-const ReactDOMServer = require('react-dom/server')
-const ReactRouter = require('react-router')
-const ServerRouter = ReactRouter.ServerRouter
-const _ = require('lodash')
-const fs = require('fs')
-const port = 5050
-const baseTemplate = fs.readFileSync('./index.html')
-const template = _.template(baseTemplate)
-const App = require('./js/App').default
+const { renderToString } = require('react-dom/server')
+const { Match, RouterContext } = require('react-router') 
 
-const server = express()
+const routes = require('./config/routes')
 
-server.use('/public', express.static('./public'))
+// define the folder that will be used for static assets
+app.use(Express.static(__dirname + './public'))
 
-server.use((req, res) => {
-  const context = ReactRouter.createServerRenderContext()
-  let body = ReactDOMServer.renderToString(
-    React.createElement(ServerRouter, {location: req.url, context: context},
-      React.createElement(App)
-    )
+
+// universal routing and rendering
+app.get('*', (req, res) => {
+
+  Match(
+
+    { routes, location: req.url }, 
+
+    (err, redirectLocation, renderProps) => {
+    
+    // in case of error display the error message
+    if (err) {
+      res.status(500).send(err.message)
+    } 
+
+    // in case of redirect propagate the redirect to the browser
+    if (redirectLocation) {
+      return res.redirect(302, redirectLocation.pathname + redirectLocation.search)  
+    } 
+
+    // generate the React markup for the current route
+    let body
+
+    if (renderProps) {
+      // if the current route matched we have renderProps
+      body = renderToString(<RouterContext {...renderProps} />)
+    } else {
+      // otherwise we can render a 404 page
+      res.status(404)
+    }
+
+    // render the index template with the embedded React markup
+    return res.render('index', { body })
+    }
   )
-  res.write(template({body: body}))
-  res.end()
 })
 
-console.log('listening on ' + port)
-server.listen(port)
+// start the server
+const port = process.env.PORT || 3000
+const env = process.env.NODE_ENV || 'production';
+
+server.listen(port, err => {
+  if (err) {
+    return console.error(err)
+  }
+  console.info(`Server listening on http://localhost:${port} [${env}]`)

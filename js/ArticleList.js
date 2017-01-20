@@ -1,3 +1,5 @@
+// Receives each prop from the parent component and return it formatted individually
+
 import React from 'react'
 import Moment from 'moment'
 

@@ -1,3 +1,5 @@
+// Central component for adding the main app components
+
 import React from 'react'
 import Header from './Header'
 import Articles from './Articles'

@@ -1,3 +1,5 @@
+// The top bar of the view
+
 import React from 'react'
 
 import preloadData from '../public/articles.json'
