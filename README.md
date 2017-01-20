@@ -1,4 +1,4 @@
-Display .Mic News Articles
+# Mic Frontend Development Test
 
 To run the application in your development environment:
 
@@ -26,3 +26,10 @@ Considerations:
 2. Maintain local state in a parent component and delegate respective props down to its children. 
 3. Create handler methods in the parent component, bind them to the parent component, and use them to alter state based on user action.
 
+Tech Stack
+
+1. ReactJS
+2. Axios
+3. Node.js
+4. Express.js
+5. Standard for linting
