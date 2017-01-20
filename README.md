@@ -9,6 +9,7 @@ To run the application in your development environment:
 5. Point your browser to http://localhost:8080
 
 Features
+
 1. Requested UI/UX of screenshot provided.
 2. Upon pageload, the first 10 articles of 30 from the json data file `articles.json` populate the screen.
 3. Below the table is a 'Load More' button which loads 10 more articles at a time.
